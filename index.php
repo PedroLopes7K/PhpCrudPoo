@@ -6,15 +6,15 @@ require_once 'vendor/autoload.php';
 
 
 $newProduct = new \App\Model\Product();
-$newProduct->setId(6);
-$newProduct->setName('TENIS NIKE');
-$newProduct->setDescription('Color Red, 42');
+$newProduct->SetId(6);
+$newProduct->SetName('TENIS NIKE');
+$newProduct->SetDescription('Color Red, 42');
 
 
 $productDao = new \App\Model\ProductDao();
-// $productDao->create($newProduct);
-$productDao->update($newProduct);
-$allProducts = $productDao->read();
+// $productDao->Create($newProduct);
+$productDao->Update($newProduct);
+$allProducts = $productDao->Read();
 // var_dump($allProducts);
 foreach ($allProducts as $product) {
   echo "<h3> Product: " . $product['name'] . "</h2> ";
@@ -22,4 +22,4 @@ foreach ($allProducts as $product) {
   echo "<hr>";
 }
 
-$productDao->delete($newProduct->getId());
+$productDao->Delete($newProduct->GetId());

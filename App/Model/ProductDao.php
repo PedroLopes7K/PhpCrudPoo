@@ -5,16 +5,16 @@ namespace App\Model;
 class ProductDao
 {
 
-  public function create(Product $p)
+  public function Create(Product $p)
   {
     $sql = 'INSERT INTO products (name, description) VALUES (?,?)';
     $stmt = Connection::GetConn()->prepare($sql);
-    $stmt->bindValue(1, $p->getName());
-    $stmt->bindValue(2, $p->getDescription());
+    $stmt->bindValue(1, $p->GetName());
+    $stmt->bindValue(2, $p->GetDescription());
     $stmt->execute();
   }
 
-  public function read()
+  public function Read()
   {
     $sql = 'SELECT * FROM products';
     $stmt = Connection::GetConn()->prepare($sql);
@@ -27,18 +27,18 @@ class ProductDao
       return [];
     }
   }
-  public function update(Product $p)
+  public function Update(Product $p)
   {
 
     $sql = 'UPDATE products SET name = ?, description = ? WHERE id = ?';
     $stmt = Connection::GetConn()->prepare($sql);
-    $stmt->bindValue(1, $p->getName());
-    $stmt->bindValue(2, $p->getDescription());
-    $stmt->bindValue(3, $p->getId());
+    $stmt->bindValue(1, $p->GetName());
+    $stmt->bindValue(2, $p->GetDescription());
+    $stmt->bindValue(3, $p->GetId());
 
     $stmt->execute();
   }
-  public function delete($id)
+  public function Delete($id)
   {
     $sql = 'DELETE FROM products WHERE id = ?';
     $stmt = Connection::GetConn()->prepare($sql);

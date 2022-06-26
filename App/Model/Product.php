@@ -7,30 +7,30 @@ class Product
 {
   private $id, $name, $description;
 
-  public function getId()
+  public function GetId()
   {
     return $this->id;
   }
 
-  public function setId($id)
+  public function SetId($id)
   {
     $this->id = $id;
   }
 
-  public function getName()
+  public function GetName()
   {
     return $this->name;
   }
-  public function setName($name)
+  public function SetName($name)
   {
     $this->name = $name;
   }
 
-  public function getDescription()
+  public function GetDescription()
   {
     return $this->description;
   }
-  public function setDescription($description)
+  public function SetDescription($description)
   {
     $this->description = $description;
   }
